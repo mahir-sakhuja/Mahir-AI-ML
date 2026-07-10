@@ -1,0 +1,29 @@
+=== NOTEBOOK: c:\Users\Mahir sakhuja\New folder (4)\Day_2_Course_Material\Project_2_outliers_percentile\1_outliers_percentile_exercise.ipynb ===
+
+--- Code Cell 0 ---
+import pandas as pd
+
+--- Code Cell 1 ---
+df = pd.read_csv("AB_NYC_2019.csv")
+df.head()
+
+--- Code Cell 2 ---
+df.price.describe()
+
+--- Code Cell 3 ---
+min_thresold, max_thresold = df.price.quantile([0.01,0.999])
+min_thresold, max_thresold
+
+--- Code Cell 4 ---
+df[df.price<min_thresold]
+
+--- Code Cell 5 ---
+df2 = df[(df.price>min_thresold)&(df.price<max_thresold)]
+df2.shape
+
+--- Code Cell 6 ---
+df2.sample(5)
+
+--- Code Cell 7 ---
+df2.price.describe()
+
