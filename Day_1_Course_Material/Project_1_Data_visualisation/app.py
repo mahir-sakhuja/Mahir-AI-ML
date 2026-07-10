@@ -129,7 +129,7 @@ category_filter = st.sidebar.multiselect(
 )
 content_rating_filter = st.sidebar.multiselect(
     "Select Content Rating",
-    options=sorted(df['Content Rating'].unique()),
+    options=sorted(df['Content Rating'].dropna().unique()),
     default=[]
 )
 
