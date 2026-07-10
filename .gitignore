@@ -1,0 +1,23 @@
+# Common gitignore
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.log
+.env
+.venv/
+env/
+venv/
+.idea/
+.DS_Store
+*.egg-info/
+build/
+dist/
+
+# Ignored large binary model weights
+*.pkl
+*.h5
+*.keras
+chroma_db/
