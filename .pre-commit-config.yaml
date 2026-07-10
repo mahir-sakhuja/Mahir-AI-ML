@@ -1,0 +1,12 @@
+[repo]
+
+default_stages: [commit]
+
+[hooks]
+-   id: detect-secrets
+    name: Detect secrets in commits
+    entry: detect-secrets-hook
+    language: python
+    types: [text]
+    stages: [commit]
+    args: [--baseline, .git/secrets.baseline]
