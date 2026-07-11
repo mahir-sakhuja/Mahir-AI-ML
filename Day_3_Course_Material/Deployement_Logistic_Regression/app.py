@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+import os
 
 # -----------------------------------
 # Page Configuration
@@ -17,7 +19,8 @@ st.write("Predict Insurance Sales using Logistic Regression")
 # -----------------------------------
 # Load Dataset
 # -----------------------------------
-df = pd.read_csv("insurance_data.csv")
+csv_path = os.path.join(os.path.dirname(__file__), "insurance_data.csv")
+df = pd.read_csv(csv_path)
 
 st.subheader("Insurance Dataset")
 st.dataframe(df)
@@ -49,10 +52,8 @@ age = st.number_input(
 # Prediction
 # -----------------------------------
 if st.button("Predict Insurance in Yes/No:"):
-
     prediction = model.predict([[age]])
-
-    st.success(f"Predicted Price: ₹ {prediction[0]:,.2f}")
+    st.success(f"Predicted: {'Yes' if prediction[0] == 1 else 'No'}")
 
 # -----------------------------------
 # Model Information
