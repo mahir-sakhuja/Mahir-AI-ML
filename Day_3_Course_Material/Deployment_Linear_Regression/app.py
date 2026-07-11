@@ -26,7 +26,9 @@ st.write("Aditya Project Predict house price using Linear Regression")
 # -----------------------------------
 # Load Dataset
 # -----------------------------------
-df = pd.read_csv("houseprice.csv")
+import os
+csv_path = os.path.join(os.path.dirname(__file__), "houseprice.csv")
+df = pd.read_csv(csv_path)
 
 st.subheader("Master Dataset")
 st.dataframe(df)
