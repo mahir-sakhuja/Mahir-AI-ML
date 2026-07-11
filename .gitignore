@@ -21,3 +21,6 @@ dist/
 *.h5
 *.keras
 chroma_db/
+
+# AI assistant internals — never commit these
+.gemini/
