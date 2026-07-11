@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
-import os
+from pathlib import Path
 
 # -----------------------------------
 # Page Configuration
@@ -19,7 +19,7 @@ st.write("Predict Insurance Sales using Logistic Regression")
 # -----------------------------------
 # Load Dataset
 # -----------------------------------
-csv_path = os.path.join(os.path.dirname(__file__), "insurance_data.csv")
+csv_path = Path(__file__).parent / "insurance_data.csv"
 df = pd.read_csv(csv_path)
 
 st.subheader("Insurance Dataset")
