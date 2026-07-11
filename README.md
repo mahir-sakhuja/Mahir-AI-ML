@@ -28,7 +28,7 @@ streamlit run app.py
 
 | Day | Project Name | Description | Path |
 | :--- | :--- | :--- | :--- |
-| **Day 1** | **Google Play Store Analytics** | Interactive data cleaning, stats, seaborn & plotly charts on playstore dataset. | [`Day 1 Course Material/Project 1 Data_visualisation`](file:///c:/Users/Mahir%20sakhuja/New%20folder%20(4)/Day%201%20Course%20Material/Project%201%20Data_visualisation) |
+| **Day 1** | **Google Play Store Analytics** | Interactive data cleaning, stats, seaborn & plotly charts on playstore dataset. | [`Day 1 Course Material/Project 1 Data_visualisation`](https://mahir-ai-ml-zuxln6v7ibrnxiqdxtmgaf.streamlit.app/) |
 | **Day 2** | **Canada Per Capita Income** | Linear Regression model predicting income trends up to the year 2050. | [`Day 2 Course Material/Project 3 canada_per_capita_income`](file:///c:/Users/Mahir%20sakhuja/New%20folder%20(4)/Day%202%20Course%20Material/Project%203%20canada_per_capita_income) |
 | **Day 3** | **Linear Regression (House Prices)** | Linear Regression model deployment for predicting housing costs. | [`Day 3 Course Material/Deployment Linear Regression`](file:///c:/Users/Mahir%20sakhuja/New%20folder%20(4)/Day%203%20Course%20Material/Deployment%20Linear%20Regression) |
 | **Day 3** | **Logistic Regression (Insurance)** | Logistic regression model predicting policy purchase chances. | [`Day 3 Course Material/Deployement Logistic Regression`](file:///c:/Users/Mahir%20sakhuja/New%20folder%20(4)/Day%203%20Course%20Material/Deployement%20Logistic%20Regression) |
