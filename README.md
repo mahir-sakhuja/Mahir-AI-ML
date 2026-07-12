@@ -23,7 +23,7 @@ Welcome to the **Mahir AI-ML Portfolio**! Below is the directory of live project
 
 ### 📅 Day 6: Instance-Based & Deep Learning
 *   **Project 12: COVID-19 Chest X-Ray Detector** - [Live App](https://dmtede9rnfyehpdpyhrzyx.streamlit.app/)
-*   **Project 13: Iris Flower Classifier (KNN)** - [Live App](https://mahir-ai-ml-ua94xeke2gkmlplvbsfgbu.streamlit.app/)
+*   **Project 13: Iris Flower Classifier (KNN)** - [Live App](https://mahir-ai-ml-8cqsmcowbvfauuhlscdihc.streamlit.app/)
 *   **Project 14: Eye Gender Detection CNN** - [Run Locally](https://github.com/mahir-sakhuja/Mahir-AI-ML/tree/main/Day_6_Course_Material/Project_09_Eye_Gender_Detection)
 
 ### 📅 Day 7: Large Language Models & RAG Chatbots
