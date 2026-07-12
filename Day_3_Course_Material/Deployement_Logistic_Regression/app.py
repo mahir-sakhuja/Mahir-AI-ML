@@ -7,14 +7,18 @@ from pathlib import Path
 # -----------------------------------
 # Page Configuration
 # -----------------------------------
+# -----------------------------------
+# Page Configuration
+# -----------------------------------
 st.set_page_config(
     page_title="Insurance Sales Prediction",
-    page_icon="🏠",
+    page_icon="🛡️",
     layout="centered"
 )
 
-st.title("🏠 Project 3: Insurance Sales Prediction")
+st.title("🛡️ Project 3: Insurance Sales Prediction")
 st.write("Predict Insurance Sales using Logistic Regression")
+
 
 # -----------------------------------
 # Load Dataset
