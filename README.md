@@ -12,7 +12,7 @@ Welcome to the **Mahir AI-ML Portfolio**! Below is the directory of live project
 ### 📅 Day 3: Logistic Regression & Classification
 *   **Project 4: Employee Retention Prediction** - [Live App](https://mahir-ai-ml-rbfeyaulrgxtbytxefakxw.streamlit.app/)
 *   **Project 7: House Price Predictor (Linear Regression)** - [Live App](https://mahir-ai-ml-azwb38tuwdmbhk2jxpe66f.streamlit.app/)
-*   **Project 8: Insurance Sales Predictor (Logistic Regression)** - [Live App](https://mahir-ai-ml-bxwpchgjyb5pjak8ipkoy6.streamlit.app/)
+*   **Project 8: Insurance Sales Predictor (Logistic Regression)** - [Live App](https://mahir-ai-ml-swkyhvmwixjckjm7pqgepw.streamlit.app/)
 
 ### 📅 Day 4: Clustering & Machine Learning
 *   **Project 5: Cat vs Dog Classifier** - [Live App](https://qfhoydufwumwtggb73xet8.streamlit.app/)
