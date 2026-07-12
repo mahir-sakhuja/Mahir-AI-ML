@@ -7,3 +7,4 @@ plotly
 scikit-learn==1.5.0
 tensorflow
 pillow
+onnxruntime
