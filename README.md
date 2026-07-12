@@ -19,7 +19,7 @@ Welcome to the **Mahir AI-ML Portfolio**! Below is the directory of live project
 *   **Project 6: K-Means Clustering Visualizer** - [Live App](https://mahir-ai-ml-tbeggvnrgvhyj5ecybmmax.streamlit.app/)
 
 ### 📅 Day 5: Deep Learning & Computer Vision
-*   **Project 9: Gender Recognition CNN** - [Run Locally](https://mahir-ai-ml-ezbtej2hgosxhz2xfg9n7n.streamlit.app/)
+*   **Project 9: Gender Recognition CNN** - [Live App](https://mahir-ai-ml-ezbtej2hgosxhz2xfg9n7n.streamlit.app/)
 
 ### 📅 Day 6: Instance-Based & Deep Learning
 *   **Project 12: COVID-19 Chest X-Ray Detector** - [Live App](https://dmtede9rnfyehpdpyhrzyx.streamlit.app/)
