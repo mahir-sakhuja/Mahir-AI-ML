@@ -7,7 +7,7 @@ Welcome to the **Mahir AI-ML Portfolio**! Below is the directory of live project
 
 ### 📅 Day 2: Analytics & Linear Modeling
 *   **Project 2: Outlier Detection (NYC Airbnb)** - [Live App](https://mahir-ai-ml-mbkckrqlqjtnewurzgjny7.streamlit.app/)
-*   **Project 3: Canada Per Capita Income Predictor** - [Live App](https://mahir-ai-ml-d8bun3jxtwecsifl9zxappk.streamlit.app/)
+  
 
 ### 📅 Day 3: Logistic Regression & Classification
 *   **Project 4: Employee Retention Prediction** - [Live App](https://employeeretentionanalysis-ltntvwuppqyvchchwatmnz.streamlit.app/)
