@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 from PIL import Image
 import os
-from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
 st.set_page_config(page_title="Cat vs Dog Classifier", page_icon="🐶", layout="centered")
@@ -23,14 +23,28 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.title("🐱 Cat vs Dog Classifier")
-st.markdown("Upload a photo — the model will predict **Cat** or **Dog** using Logistic Regression trained on-the-fly.")
+st.markdown("Upload a photo — the model will predict **Cat** or **Dog** using a RandomForest classifier trained on-the-fly.")
 
-IMG_SIZE = 64
+IMG_SIZE = 32
 BASE_DIR = os.path.dirname(__file__)
+
+def extract_features(img):
+    # Feature 1: Raw pixels resized to 32x32
+    img_resized = img.resize((IMG_SIZE, IMG_SIZE))
+    pixels = np.array(img_resized).flatten() / 255.0
+    
+    # Feature 2: Color Histogram (8 bins per channel)
+    arr = np.array(img)
+    hist_r, _ = np.histogram(arr[:, :, 0], bins=8, range=(0, 256))
+    hist_g, _ = np.histogram(arr[:, :, 1], bins=8, range=(0, 256))
+    hist_b, _ = np.histogram(arr[:, :, 2], bins=8, range=(0, 256))
+    hist = np.concatenate([hist_r, hist_g, hist_b]) / arr.size
+    
+    return np.concatenate([pixels, hist])
 
 @st.cache_resource
 def train_model():
-    images, labels = [], []
+    features_list, labels = [], []
     for label, folder in enumerate(["Cat", "Dog"]):
         folder_path = os.path.join(BASE_DIR, folder)
         if not os.path.exists(folder_path):
@@ -40,16 +54,15 @@ def train_model():
                 continue
             try:
                 img = Image.open(os.path.join(folder_path, fname)).convert("RGB")
-                img = img.resize((IMG_SIZE, IMG_SIZE))
-                images.append(np.array(img).flatten())
+                features_list.append(extract_features(img))
                 labels.append(label)
             except Exception:
                 pass
 
-    X = np.array(images, dtype=np.float32) / 255.0
+    X = np.array(features_list, dtype=np.float32)
     y = np.array(labels)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    model = LogisticRegression(max_iter=1000)
+    model = RandomForestClassifier(random_state=42)
     model.fit(X_train, y_train)
     acc = model.score(X_test, y_test) * 100
     return model, acc, len(X)
@@ -68,9 +81,9 @@ if uploaded_file:
     image = Image.open(uploaded_file).convert("RGB")
     st.image(image, caption="Uploaded Image", width=300)
 
-    resized = np.array(image.resize((IMG_SIZE, IMG_SIZE))).flatten().astype(np.float32) / 255.0
-    prediction = model.predict([resized])[0]
-    proba = model.predict_proba([resized])[0]
+    features = extract_features(image)
+    prediction = model.predict([features])[0]
+    proba = model.predict_proba([features])[0]
 
     if prediction == 0:
         st.markdown(f'<div class="result-box cat">🐱 Prediction: CAT<br><small>Confidence: {proba[0]*100:.1f}%</small></div>', unsafe_allow_html=True)
