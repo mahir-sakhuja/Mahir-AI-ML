@@ -10,14 +10,14 @@ Welcome to the **Mahir AI-ML Portfolio**! Below is the directory of live project
   
 
 ### 📅 Day 3: Logistic Regression & Classification
-*   **Project 4: Employee Retention Prediction** - [Live App](https://employeeretentionanalysis-ltntvwuppqyvchchwatmnz.streamlit.app/)
+*   **Project 4: Employee Retention Prediction** - [Live App]()
 *   **Project 7: House Price Predictor (Linear Regression)** - [Live App](https://mahir-ai-ml-azwb38tuwdmbhk2jxpe66f.streamlit.app/)
-*   **Project 8: Insurance Sales Predictor (Logistic Regression)** - [Live App](https://logistic-regression-ep9yaxnba8r93zww5xszls.streamlit.app/)
+*   **Project 8: Insurance Sales Predictor (Logistic Regression)** - [Live App](https://mahir-ai-ml-bxwpchgjyb5pjak8ipkoy6.streamlit.app/)
 
 ### 📅 Day 4: Clustering & Machine Learning
-*   **Project 5: Cat vs Dog Classifier** - [Live App](https://catdogimageclassifer-jvmrxkwbudnsbq2ebkfakv.streamlit.app/)
-*   **Project 6: K-Means Age/Income Customer Segmentation** - [Live App](https://k-means-classifier-a6yxzfpaanuvwej7uhmgbc.streamlit.app/)
-*   **Project 10: Male/Female Gender Classifier** - [Live App](https://male-female-classifier-v6vuakpatxeghdbhtmmspp.streamlit.app/)
+*   **Project 5: Cat vs Dog Classifier** - [Live App](https://qfhoydufwumwtggb73xet8.streamlit.app/)
+*   **Project 6: K-Means Clustering Visualizer** - [Live App](https://k-means-classifier-a6yxzfpaanuvwej7uhmgbc.streamlit.app/)
+*   **Project 10: Male/Female Gender Classifier** - [Live App]()
 *   **Project 11: Iris Flower K-Means Clustering** - [Live App](https://iris-flower-clustering-using-k-means-hxurs8ibgznh6ubjvheavz.streamlit.app/)
 
 ### 📅 Day 5: Deep Learning & Computer Vision
