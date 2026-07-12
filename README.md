@@ -16,9 +16,7 @@ Welcome to the **Mahir AI-ML Portfolio**! Below is the directory of live project
 
 ### 📅 Day 4: Clustering & Machine Learning
 *   **Project 5: Cat vs Dog Classifier** - [Live App](https://qfhoydufwumwtggb73xet8.streamlit.app/)
-*   **Project 6: K-Means Clustering Visualizer** - [Live App](https://k-means-classifier-a6yxzfpaanuvwej7uhmgbc.streamlit.app/)
-*   **Project 10: Male/Female Gender Classifier** - [Live App]()
-*   **Project 11: Iris Flower K-Means Clustering** - [Live App](https://iris-flower-clustering-using-k-means-hxurs8ibgznh6ubjvheavz.streamlit.app/)
+*   **Project 6: K-Means Clustering Visualizer** - [Live App](https://mahir-ai-ml-tbeggvnrgvhyj5ecybmmax.streamlit.app/)
 
 ### 📅 Day 5: Deep Learning & Computer Vision
 *   **Project 9: Gender Recognition CNN** - [Run Locally](https://github.com/mahir-sakhuja/Mahir-AI-ML/tree/main/Day_5_Course_Material/Project_7_CNN_Classification)
