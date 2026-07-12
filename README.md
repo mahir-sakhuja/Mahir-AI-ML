@@ -27,9 +27,7 @@ Welcome to the **Mahir AI-ML Portfolio**! Below is the directory of live project
 *   **Project 12: COVID-19 Chest X-Ray Detector** - [Live App](https://dmtede9rnfyehpdpyhrzyx.streamlit.app/)
 *   **Project 13: Iris Flower Classifier (KNN)** - [Run Locally](https://github.com/mahir-sakhuja/Mahir-AI-ML/tree/main/Day_6_Course_Material/Project_08_KNN_Deployment)
 *   **Project 14: Eye Gender Detection CNN** - [Run Locally](https://github.com/mahir-sakhuja/Mahir-AI-ML/tree/main/Day_6_Course_Material/Project_09_Eye_Gender_Detection)
-*   **Logical AND Gate Neural Net** - [Run Locally](https://github.com/mahir-sakhuja/Mahir-AI-ML/tree/main/Day_6_Course_Material/AND_using_Keras_Neural_Netwrok)
-*   **Logical XOR Gate Neural Net** - [Run Locally](https://github.com/mahir-sakhuja/Mahir-AI-ML/tree/main/Day_6_Course_Material/XOR_using_Neural_Netwrok)
 
 ### 📅 Day 7: Large Language Models & RAG Chatbots
 *   **Project 15: Samsung Washing Machine Assistant (RAG)** - [Live App](https://6ghhhbmmdyjauxf6ago7an.streamlit.app/)
-*   **Project 16: Star Health Insurance Chatbot (RAG)** - [Run Locally](https://github.com/mahir-sakhuja/Mahir-AI-ML/tree/main/Day%2007%20Course%20Material/Project%2010%20Star%20Health%20Insurance%20Policies%20Building%20RAG%20Chatbots%20for%20Technical%20Documentation)
+  
