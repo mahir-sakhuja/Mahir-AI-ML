@@ -2,10 +2,38 @@ import streamlit as st
 import numpy as np
 from PIL import Image
 import os
+import urllib.request
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
+try:
+    import onnxruntime as ort
+except ImportError:
+    import subprocess
+    subprocess.check_call(["pip", "install", "onnxruntime"])
+    import onnxruntime as ort
+
 st.set_page_config(page_title="Cat vs Dog Classifier", page_icon="🐶", layout="centered")
+
+MODEL_URL = "https://github.com/onnx/models/raw/main/validated/vision/classification/mobilenet/model/mobilenetv2-7.onnx"
+BASE_DIR = os.path.dirname(__file__)
+MODEL_PATH = os.path.join(BASE_DIR, "mobilenetv2-7.onnx")
+
+@st.cache_resource
+def load_onnx_model():
+    if not os.path.exists(MODEL_PATH):
+        with st.spinner("Downloading pre-trained MobileNetV2 model (13MB)..."):
+            urllib.request.urlretrieve(MODEL_URL, MODEL_PATH)
+    return ort.InferenceSession(MODEL_PATH)
+
+try:
+    session = load_onnx_model()
+    input_name = session.get_inputs()[0].name
+    output_name = session.get_outputs()[0].name
+    use_onnx = True
+except Exception as e:
+    st.warning(f"Failed to load ONNX model. Falling back to local training. Error: {e}")
+    use_onnx = False
 
 st.markdown("""
 <style>
@@ -41,6 +69,51 @@ def extract_features(img):
     hist = np.concatenate([hist_r, hist_g, hist_b]) / arr.size
     
     return np.concatenate([pixels, hist])
+
+def predict_image(image):
+    if use_onnx:
+        try:
+            # 1. Resize to 224x224
+            img = image.resize((224, 224))
+            # 2. Convert to float32 normalized
+            arr = np.array(img, dtype=np.float32) / 255.0
+            mean = np.array([0.485, 0.456, 0.406], dtype=np.float32)
+            std = np.array([0.229, 0.224, 0.225], dtype=np.float32)
+            arr = (arr - mean) / std
+            # 3. Transpose to CHW and add batch dimension
+            arr = np.transpose(arr, (2, 0, 1))
+            arr = np.expand_dims(arr, axis=0)
+            
+            # 4. Run session
+            outputs = session.run([output_name], {input_name: arr})
+            logits = outputs[0][0]
+            
+            # 5. Softmax
+            exp_logits = np.exp(logits - np.max(logits))
+            probs = exp_logits / np.sum(exp_logits)
+            
+            # Dog classes: 151 to 275 (inclusive)
+            # Cat classes: 281 to 287 (inclusive)
+            dog_prob = np.sum(probs[151:276])
+            cat_prob = np.sum(probs[281:288])
+            
+            total = cat_prob + dog_prob
+            if total > 0:
+                cat_p = cat_prob / total
+                dog_p = dog_prob / total
+            else:
+                cat_p, dog_p = 0.5, 0.5
+                
+            pred = 0 if cat_p > dog_p else 1
+            return pred, [cat_p, dog_p]
+        except Exception as e:
+            pass
+            
+    # Fallback to local RandomForest model
+    features = extract_features(image)
+    pred = model.predict([features])[0]
+    proba = model.predict_proba([features])[0]
+    return pred, proba
 
 @st.cache_resource
 def train_model():
@@ -81,9 +154,7 @@ if uploaded_file:
     image = Image.open(uploaded_file).convert("RGB")
     st.image(image, caption="Uploaded Image", width=300)
 
-    features = extract_features(image)
-    prediction = model.predict([features])[0]
-    proba = model.predict_proba([features])[0]
+    prediction, proba = predict_image(image)
 
     if prediction == 0:
         st.markdown(f'<div class="result-box cat">🐱 Prediction: CAT<br><small>Confidence: {proba[0]*100:.1f}%</small></div>', unsafe_allow_html=True)
