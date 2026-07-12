@@ -27,5 +27,5 @@ Welcome to the **Mahir AI-ML Portfolio**! Below is the directory of live project
 
 
 ### 📅 Day 7: Large Language Models & RAG Chatbots
-*   **Project 15: Samsung Washing Machine Assistant (RAG)** - [Live App](https://6ghhhbmmdyjauxf6ago7an.streamlit.app/)
+*   **Project 15: Samsung Washing Machine Assistant (RAG)** - [Live App](https://mahir-ai-ml-xxaapphmbns6bwk8ckktxr9.streamlit.app/)
   
